@@ -55,9 +55,9 @@
 			// | HOME | SAT+ | ANI+ | RGBT | ANI+ | SAT- |   |     | BT3   |     |     | VOL- | END |
 			//                       |     |      |    |    |     |
 			bindings = <
-				&reset &rgb_ug RGB_HUI &trans          &kp UP     &kp trans        &rgb_ug RGB_HUD  &none &bt BT_SEL 0  &none  &none  &none  &C_VOL_UP  &kp DEL
-				&CAPS  &rgb_ug RGB_SAI &kp LEFT        &kp DOWN   &kp RIGHT        &rgb_ug RGB_SAD  &none &bt BT_SEL 1  &none  &none  &none  &C_MUTE    &TO 3
-				&HOME  &rgb_ug RGB_BRI &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &none &bt BT_SEL 2  &none  &none  &none  &C_VOL_DN  &kp END
+				&reset &rgb_ug RGB_HUI &trans          &kp UP     &kp trans        &rgb_ug RGB_HUD  &none &bt BT_SEL 0  &none  &none  &none  &kp C_VOL_UP  &kp DEL
+				&kp CAPS  &rgb_ug RGB_SAI &kp LEFT        &kp DOWN   &kp RIGHT        &rgb_ug RGB_SAD  &none &bt BT_SEL 1  &none  &none  &none  &kp C_MUTE    &TO 3
+				&HOME  &rgb_ug RGB_BRI &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &none &bt BT_SEL 2  &none  &none  &none  &kp C_VOL_DN  &kp END
 				&trans      &trans       &trans        &trans      &trans
 				>;
 		};
