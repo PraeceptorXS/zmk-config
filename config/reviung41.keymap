@@ -30,7 +30,7 @@
 				&kp TAB   	 &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp MINUS
 				&mt LGUI TAB &kp A &kp R &kp S &kp T &kp D   &kp H &kp N  &kp E     &kp I   &kp O 	 &kp SQT
 				&kp LBRC 	 &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M  &kp COMMA &kp DOT &kp FSLH &kp RBRC
-				&mt LCTRL ESC &lt 1 BKSP &mt LSFT SPACE &lt 2 TAB &mt RALT RET
+				&mt LCTRL ESC &lt 1 BKSP &mt LSHFT SPACE &lt 2 TAB &mt RALT RET
 				>;
 		};
 
