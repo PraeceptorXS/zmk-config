@@ -9,12 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
-&mt: mod_tap {
+/*&mt: mod_tap {
 	compatible = "zmk,behavior-hold-tap";
 	tapping-term-ms = <90>;
 	quick_tap_ms = <90>;
 	flavor = "tap-preferred";
-};
+};*/
 
 / {
 	keymap {
