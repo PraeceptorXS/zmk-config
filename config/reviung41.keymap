@@ -29,7 +29,7 @@
 			bindings = <
 				&kp TAB   	 &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp MINUS
 				&mt LGUI TAB &kp A &kp R &kp S &kp T &kp D   &kp H &kp N  &kp E     &kp I   &kp O 	 &kp SQT
-				&kp LBRC 	 &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M  &kp COMMA &kp DOT &kp FSLH &kp RBRC
+				&kp LBKT 	 &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M  &kp COMMA &kp DOT &kp FSLH &kp RBKT
 				&mt LCTRL ESC &lt 1 BKSP &mt LSHFT SPACE &lt 2 TAB &mt RALT RET
 				>;
 		};
@@ -55,9 +55,9 @@
 			// | HOME | SAT+ | ANI+ | RGBT | ANI+ | SAT- |   |     | BT3   |     |     | VOL- | END |
 			//                       |     |      |    |    |     |
 			bindings = <
-				&reset    &rgb_ug RGB_HUI &none    &kp UP     			&none     &rgb_ug RGB_HUD &none &bt BT_SEL 0  &none  &none  &none  &kp C_VOL_UP  &kp DEL
-				&kp CAPS  &rgb_ug RGB_BRI &kp LEFT &kp DOWN   			&kp RIGHT &rgb_ug RGB_BRD &none &bt BT_SEL 1  &none  &none  &none  &kp C_MUTE    &tog 3
-				&kp HOME  &rgb_ug RGB_SAI &none    &rgb_ug RGB_TOG      &none     &rgb_ug RGB_SAD &none &bt BT_SEL 2  &none  &none  &none  &kp C_VOL_DN  &kp END
+				&reset    &rgb_ug RGB_HUI &none    			&kp UP     		&none     		&rgb_ug RGB_HUD &bt BT_SEL 0  &kc LPAR &kc RPAR  &none  &kp C_VOL_UP  &kp DEL
+				&kp CAPS  &rgb_ug RGB_BRI &kp LEFT 			&kp DOWN   		&kp RIGHT 		&rgb_ug RGB_BRD &bt BT_SEL 1  &kc LBKT &kc RBKT  &none  &kp C_MUTE    &tog 3
+				&kp HOME  &rgb_ug RGB_SAI &rgb_ug RGB_EFF   &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_SAD &bt BT_SEL 2  &kc LBRC &kc RBRC  &none  &kp C_VOL_DN  &kp END
 				&trans      &trans       &trans        &trans      &trans
 				>;
 		};
@@ -69,10 +69,10 @@
 			// |          |          |          |          |    |         |   | RESET |     |     |     |     |        |
 			//                                              |     |     |     |     |     |
 			bindings = <
-				&rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &rgb_ug RGB_TOG    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-				&rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none              &none        &none        &none        &none        &none        &none
-				&none           &none           &none           &none           &none &none              &reset       &none        &none        &none        &none        &none
-				&trans      &trans       &tog 3        &trans      &trans
+				&kp ESC &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I 	  &kp O    &kp P
+				&kp M   &kp LSHFT &kp A &kp S &kp D &kp G &kp H &kp J &kp K &kp L 	  &kp SEMI &tog 3
+				&kp TAB &kp Z     &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT  &tog 3
+				&kp N4  &kp N3    &kp SPACE   &none &none
 				>;
 		};
 	};
