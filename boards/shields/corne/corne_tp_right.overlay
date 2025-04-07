@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "corne.dtsi"
+#include "corne_tp_ps2.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&five_column_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 14 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+// We have the trackpoint on the right peripheral split, so
+// set the actual trackpoint as the device for the peripheral. 
+&tpoint_split { 
+    device = <&tpoint_device>; 
+
+    input-processors = <&zip_xy_swap_mapper>;
+};

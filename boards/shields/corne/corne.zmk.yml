@@ -1,0 +1,14 @@
+file_format: "1"
+id: corne
+name: Corne
+type: shield
+url: https://github.com/foostan/crkbd/
+requires: [pro_micro]
+exposes: [spi_oled]
+features:
+  - keys
+  - display
+  - studio
+siblings:
+  - corne_disp_left
+  - corne_tp_right
