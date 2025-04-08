@@ -1,8 +1,7 @@
 file_format: "1"
-id: nice_view
-name: nice!view
+id: central_status
+name: central_status
 type: shield
 url: https://nicekeyboards.com/nice-view
-requires: [nice_view_header]
 features:
   - display

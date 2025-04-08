@@ -1,14 +1,11 @@
 # Copyright (c) 2023 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_NICE_VIEW
+if SHIELD_CENTRAL_STATUS 
 
 choice ZMK_DISPLAY_STATUS_SCREEN
     default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
 endchoice
-
-
-if ZMK_DISPLAY
 
 config LV_Z_VDB_SIZE
     default 100
@@ -19,9 +16,6 @@ config LV_DPI_DEF
 config LV_Z_MEM_POOL_SIZE
     default 4096 if ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
 
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    imply NICE_VIEW_WIDGET_STATUS
-
 config LV_Z_BITS_PER_PIXEL
     default 1
 
@@ -31,22 +25,14 @@ endchoice
 
 endif # ZMK_DISPLAY
 
-config CUSTOM_WIDGET_STATUS
-    bool "Custom status widget"
-    default y if ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
     select LV_FONT_MONTSERRAT_16
     select LV_USE_IMG
     select LV_USE_CANVAS
-
-if !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
-
-config CUSTOM_WIDGET_STATUS
     select LV_FONT_MONTSERRAT_18
     select LV_FONT_MONTSERRAT_14
     select LV_FONT_UNSCII_16
     select ZMK_WPM
-
-endif # !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 
 config CUSTOM_WIDGET_INVERTED
     bool "Invert custom status widget"
