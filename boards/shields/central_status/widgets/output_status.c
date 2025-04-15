@@ -92,6 +92,10 @@ static void draw_output_status(lv_obj_t *canvas, struct output_status_state stat
     // Draw text
     lv_canvas_draw_text(canvas, 0, 2, OUTPUT_WIDTH, &label_dsc, output_txt);
 
+    char bt_text[10] = {};
+    sprintf(bt_text, "BT%0d", state.active_profile_index);
+    lv_canvas_draw_text(canvas, 0, BATTERY_HEIGHT - 2, OUTPUT_WIDTH, &label_dsc, bt_text);
+
     // Rotate canvas
     rotate_canvas(canvas);
 }
@@ -132,7 +136,8 @@ static void peripheral_state_cb(struct peripheral_state state) {
 
 static struct peripheral_state peripheral_status_get_state(const zmk_event_t *eh) {
     struct zmk_peripheral_battery_state_changed *ev = as_zmk_peripheral_battery_state_changed(eh);
-    return (struct peripheral_state){.connected = (ev->state_of_charge > 0)};
+    return (struct peripheral_state){.connected =
+                                         (ev->state_of_charge > 0 && ev->state_of_charge <= 100)};
 }
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_peripheral_state, struct peripheral_state, peripheral_state_cb,

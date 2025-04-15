@@ -62,18 +62,18 @@ struct modifier_symbol *modifier_symbols[] = {
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
-static void anim_x_cb(void *var, int32_t v) { lv_obj_set_x(var, v); }
+// static void anim_x_cb(void *var, int32_t v) { lv_obj_set_x(var, v); }
 
-static void move_object_x(void *obj, int32_t from, int32_t to) {
-    lv_anim_t a;
-    lv_anim_init(&a);
-    lv_anim_set_var(&a, obj);
-    lv_anim_set_time(&a, 100); // will be replaced with lv_anim_set_duration
-    lv_anim_set_exec_cb(&a, anim_x_cb);
-    lv_anim_set_path_cb(&a, lv_anim_path_overshoot);
-    lv_anim_set_values(&a, from, to);
-    lv_anim_start(&a);
-}
+// static void move_object_x(void *obj, int32_t from, int32_t to) {
+//     lv_anim_t a;
+//     lv_anim_init(&a);
+//     lv_anim_set_var(&a, obj);
+//     lv_anim_set_time(&a, 100); // will be replaced with lv_anim_set_duration
+//     lv_anim_set_exec_cb(&a, anim_x_cb);
+//     lv_anim_set_path_cb(&a, lv_anim_path_overshoot);
+//     lv_anim_set_values(&a, from, to);
+//     lv_anim_start(&a);
+// }
 
 static void set_modifiers(lv_obj_t *widget, struct modifiers_state state) {
     for (int i = 0; i < NUM_SYMBOLS; i++) {
@@ -81,12 +81,10 @@ static void set_modifiers(lv_obj_t *widget, struct modifiers_state state) {
 
         if (mod_is_active && !modifier_symbols[i]->is_active) {
             lv_obj_set_style_border_color(modifier_symbols[i]->selection_line, lv_color_black(), 0);
-            move_object_x(modifier_symbols[i]->symbol, 0, 2);
-            // move_object_x(modifier_symbols[i]->selection_line, 0, 2);
+            lv_obj_set_x(modifier_symbols[i]->symbol, 2);
             modifier_symbols[i]->is_active = true;
         } else if (!mod_is_active && modifier_symbols[i]->is_active) {
-            move_object_x(modifier_symbols[i]->symbol, 2, 0);
-            // move_object_x(modifier_symbols[i]->selection_line, 2, 0);
+            lv_obj_set_x(modifier_symbols[i]->symbol, 0);
             lv_obj_set_style_border_color(modifier_symbols[i]->selection_line, lv_color_white(), 0);
             modifier_symbols[i]->is_active = false;
         }
