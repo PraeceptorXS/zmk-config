@@ -20,5 +20,4 @@
 // Enable the trackpoint listener for the central left.
 &tpoint_listener {
     status = "okay";
-    &zip_xy_transform (INPUT_TRANSFORM_X_INVERT)
 };
