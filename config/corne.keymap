@@ -104,6 +104,10 @@
             then-layer = <FUNCT>;
         };
     };
+    tpoint0_mmv_il {
+          compatible = "zmk,input-listener";
+          device = <&tpoint_split>;
+    };
     behaviors {
       // OPTION MOD MORPH
       MOD_MORPH_KEEP(full_up,    &up_for,    &fullscreen, <MOD_LALT>)

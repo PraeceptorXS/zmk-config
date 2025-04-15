@@ -7,6 +7,7 @@
 #include "corne.dtsi"
 #include "corne_tp_config.dtsi"
 #include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
