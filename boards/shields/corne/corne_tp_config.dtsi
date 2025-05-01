@@ -182,5 +182,5 @@
 	status = "okay";
 	disable-clicking;
 	tp-sensitivity = <128>;
-	sampling-rate = <80>;
+	sampling-rate = <100>;
 };
