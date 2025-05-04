@@ -108,10 +108,8 @@
       MOD_MORPH(lte_shl,      &lte,       &lt_d,      LRSFT)
       MOD_MORPH(peq_meq,      &peq,       &neq,       LRSFT)
       MOD_MORPH(rptr_rarr,    &rptr,      &rarr,      LRSFT)
-      MOD_MORPH(snake_camel,  &tog SNAKE, &tog CAMEL, LRSFT)
       MOD_MORPH(right_snap,   &cmd_r,     &snap_right,LRSFT)
       MOD_MORPH(left_snap,    &cmd_l,     &snap_left, LRSFT)
-      MOD_MORPH(kebab_path,   &tog KEBAB, &tog PATH,  LRSFT)
       // MOUSE MOD MORPH KEYS
       MOD_MORPH(left_scrl,    &mkp LCLK,  &msc SCRL_LEFT, LRSFT)
       MOD_MORPH(right_scrl,   &mkp RCLK,  &msc SCRL_RIGHT,LRSFT)
