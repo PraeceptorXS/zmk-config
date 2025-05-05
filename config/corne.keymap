@@ -92,8 +92,14 @@
         };
     };
     tpoint0_mmv_il {
-          compatible = "zmk,input-listener";
-          device = <&tpoint_split>;
+        compatible = "zmk,input-listener";
+        device = <&tpoint_split>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
+        scroller {
+            layers = <2>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+            process-next;
+        };
     };
     behaviors {
       // OPTION MOD MORPH
