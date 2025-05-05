@@ -98,8 +98,8 @@
         device = <&tpoint_split>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
         scroller {
-            layers = <2>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            layers = <LOWER>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 16>;
             process-next;
         };
     };
