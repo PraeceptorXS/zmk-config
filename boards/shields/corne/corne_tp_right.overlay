@@ -34,7 +34,7 @@
     device = <&tpoint_device>;
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
     scroller {
-        layers = <2>;
+        layers = <lower_layer>;
         input-processors = <&zip_xy_to_scroll_mapper>;
     };
 };
