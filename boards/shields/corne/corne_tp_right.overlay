@@ -6,6 +6,8 @@
 
 #include "corne.dtsi"
 #include "corne_tp_config.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -24,4 +26,11 @@
         , <&pro_micro 20 GPIO_ACTIVE_HIGH>
         , <&pro_micro 21 GPIO_ACTIVE_HIGH>
         ;
+};
+
+// We have the trackpoint on the right peripheral split, so
+// set the actual trackpoint as the device for the peripheral. 
+&tpoint_split { 
+    device = <&tpoint_device>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
 };
