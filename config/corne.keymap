@@ -100,7 +100,7 @@
           layers = <MAC WIN>;
           input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
           process-next;
-        }
+        };
         trackpoint_scroll {
             layers = <LOWER>;
             input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 32>;
