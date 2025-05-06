@@ -96,9 +96,14 @@
     tpoint0_mmv_il {
         compatible = "zmk,input-listener";
         device = <&tpoint_split>;
-        scroller {
+        trackpoint_move {
+          layers = <MAC WIN>;
+          input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
+          process-next;
+        }
+        trackpoint_scroll {
             layers = <LOWER>;
-            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 16>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 32>;
             process-next;
         };
     };
